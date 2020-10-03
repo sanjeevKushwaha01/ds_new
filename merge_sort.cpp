@@ -7,7 +7,7 @@
 void merge(int arr[], int l, int m, int r) 
 { 
     int i, j, k; 
-    int n1 = m - l + 1; 
+    int n1 = m - l; 
     int n2 = r - m; 
   
     /* create temp arrays */
@@ -17,7 +17,7 @@ void merge(int arr[], int l, int m, int r)
     for (i = 0; i < n1; i++) 
         L[i] = arr[l + i]; 
     for (j = 0; j < n2; j++) 
-        R[j] = arr[m + 1 + j]; 
+        R[j] = arr[m + j]; 
   
     /* Merge the temp arrays back into arr[l..r]*/
     i = 0; // Initial index of first subarray 
