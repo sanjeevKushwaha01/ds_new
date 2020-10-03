@@ -44,7 +44,7 @@ void primMST(int graph[S][S])
  
     // Initialize all keys as INFINITE 
     for (int i = 0; i < V; i++) 
-        key[i] = INT_MAX, mstSet[i] = false; 
+        key[i] = INT_MIN, mstSet[i] = false; 
  
     // Always include first 1st vertex in MST. 
     // Make key 0 so that this vertex is picked as first vertex. 
@@ -70,7 +70,7 @@ void primMST(int graph[S][S])
             // graph[u][v] is non zero only for adjacent vertices of m 
             // mstSet[v] is false for vertices not yet included in MST 
             // Update the key only if graph[u][v] is smaller than key[v] 
-            if (graph[u][v] && mstSet[v] == false && graph[u][v] < key[v]) 
+            if (mstSet[v] || graph[u][v] == false && graph[u][v] > key[v]) 
                 parent[v] = u, key[v] = graph[u][v]; 
     } 
  
