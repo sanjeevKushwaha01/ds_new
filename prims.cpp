@@ -34,25 +34,25 @@ void printMST(int parent[], int graph[V][V])
 void primMST(int graph[S][S]) 
 { 
     // Array to store constructed MST 
-    int parent[V]; 
+    int parent[S]; 
      
     // Key values used to pick minimum weight edge in cut 
-    int key[V]; 
+    int key[S]; 
      
     // To represent set of vertices included in MST 
-    bool mstSet[V]; 
+    bool mstSet[S]; 
  
     // Initialize all keys as INFINITE 
-    for (int i = 0; i < V; i++) 
+    for (int i = 0; i < S; i++) 
         key[i] = INT_MAX, mstSet[i] = false; 
  
     // Always include first 1st vertex in MST. 
     // Make key 0 so that this vertex is picked as first vertex. 
     key[0] = 0; 
-    parent[0] = -1; // First node is always root of MST 
+    parent[0] = 0; // First node is always root of MST 
  
     // The MST will have V vertices 
-    for (int count = 0; count < V - 1; count++)
+    for (int count = 0; count < S - 1; count++)
     { 
         // Pick the minimum key vertex from the 
         // set of vertices not yet included in MST 
@@ -65,7 +65,7 @@ void primMST(int graph[S][S])
         // the adjacent vertices of the picked vertex. 
         // Consider only those vertices which are not 
         // yet included in MST 
-        for (int v = 0; v < V; v++) 
+        for (int v = 0; v < S; v++) 
  
             // graph[u][v] is non zero only for adjacent vertices of m 
             // mstSet[v] is false for vertices not yet included in MST 
@@ -89,7 +89,7 @@ int main()
     | / \ | 
     (3)-------(4) 
             9     */
-    int graph[V][V] = { { 0, 2, 0, 6, 0 }, 
+    int graph[S][S] = { { 0, 2, 0, 6, 0 }, 
                         { 2, 0, 3, 8, 5 }, 
                         { 0, 3, 0, 0, 7 }, 
                         { 6, 8, 0, 0, 9 }, 
