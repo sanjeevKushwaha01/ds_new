@@ -14,6 +14,10 @@ bool flag=false;
 flag=false;
     }
    
+return calculate_loop;
+}
+
+bool calculate_loop(int n, bool flag){
 for(i=3;i<=sqrt(n);i=i+2)
     {
         // While i divides n, print i and divide n
@@ -32,7 +36,7 @@ for(i=3;i<=sqrt(n);i=i+2)
     else{
       printf("%d\n",num);
     }
-return flag;
+  retun flag;
 }
  
 /* Driver program to test above function */
