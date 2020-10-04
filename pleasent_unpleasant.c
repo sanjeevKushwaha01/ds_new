@@ -17,6 +17,7 @@ flag=false;
 return calculate_loop;
 }
 
+// this function calculate the pleasant number
 bool calculate_loop(int n, bool flag){
 for(i=3;i<=sqrt(n);i=i+2)
     {
